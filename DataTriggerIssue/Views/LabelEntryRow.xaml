@@ -5,19 +5,27 @@
              x:Name="ThisLabelEntryRow">
     <ContentView.ControlTemplate>
         <ControlTemplate>
-            <Entry 
-                Text="{TemplateBinding Value}"
-                Keyboard="Numeric"
-                HorizontalTextAlignment="Center"
-                HorizontalOptions="End" 
-                VerticalOptions="Center"
-            >
-                <Entry.Triggers>
-                    <DataTrigger TargetType="Entry" Binding="{TemplateBinding IsValid}" Value="False">
-                        <Setter Property="Style" Value="{StaticResource Entry.Invalid}" />
-                    </DataTrigger>
-                </Entry.Triggers>
-            </Entry>
+            <HorizontalStackLayout>
+                <Label 
+                    Text="Input a value less than 5" 
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Start"
+                    Padding="10"
+                />
+                <Entry 
+                    Text="{TemplateBinding Value}"
+                    Keyboard="Numeric"
+                    HorizontalTextAlignment="Center"
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                >
+                    <Entry.Triggers>
+                        <DataTrigger TargetType="Entry" Binding="{TemplateBinding IsValid}" Value="False">
+                            <Setter Property="Style" Value="{StaticResource Entry.Invalid}" />
+                        </DataTrigger>
+                    </Entry.Triggers>
+                </Entry>
+            </HorizontalStackLayout>
         </ControlTemplate>
     </ContentView.ControlTemplate>
 </ContentView>
